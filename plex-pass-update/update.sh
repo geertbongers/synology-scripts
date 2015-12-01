@@ -5,19 +5,7 @@ URL_DOWNLOAD=https://plex.tv/downloads?channel=plexpass
 
 # Useful functions
 rawurlencode() {
-	local string="${1}"
-	local strlen=${#string}
-	local encoded=""
-
-	for (( pos=0 ; pos<strlen ; pos++ )); do
-		c=${string:$pos:1}
-		case "$c" in
-		[-_.~a-zA-Z0-9] ) o="${c}" ;;
-		* )               printf -v o '%%%02x' "'$c"
-	esac
-	encoded+="${o}"
-	done
-	echo "${encoded}"
+	echo $(perl -MURI::Escape -e 'print uri_escape("${1}");')
 }
 
 keypair() {
