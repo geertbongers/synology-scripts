@@ -5,7 +5,7 @@ URL_DOWNLOAD=https://plex.tv/downloads?channel=plexpass
 
 # Useful functions
 rawurlencode() {
-	echo $(perl -MURI::Escape -e 'print uri_escape("$1");')
+	echo "$1"
 }
 
 keypair() {
