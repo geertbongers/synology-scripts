@@ -1,3 +1,5 @@
+RELEASE="x86"
+PKGEXT='.spk'
 URL_LOGIN=https://plex.tv/users/sign_in
 URL_DOWNLOAD=https://plex.tv/downloads?channel=plexpass
 
@@ -67,8 +69,6 @@ if [ "$(cat /tmp/raw | grep 'Sign In</title')" != "" ]; then
     exit 1
 fi
 echo "OK"
-
-
 
 # Extract the URL for our release
 echo -n "Finding download URL for ${RELEASE}..."

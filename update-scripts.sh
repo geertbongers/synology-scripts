@@ -2,7 +2,7 @@
 #
 # Update script for updating the checkout from github
 #
-# ./update-synology-scripts/update-scripts.sh && cp ./synology-scripts/update-scripts.sh ./update-synology-scripts
+# /volume1/applications/update-synology-scripts/update-scripts.sh && cp /volume1/applications/synology-scripts/update-scripts.sh /volume1/applications/update-synology-scripts
 #
 logger "Synology Scripts - Updating synology scripts from github"
 logger "Synology Scripts - Go to upper directory and download latest master"
