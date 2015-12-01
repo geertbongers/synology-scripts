@@ -1,4 +1,5 @@
 RELEASE="x86"
+RELEASE_TITLE="Intel"
 PKGEXT='.spk'
 URL_LOGIN=https://plex.tv/users/sign_in
 URL_DOWNLOAD=https://plex.tv/downloads?channel=plexpass
@@ -61,7 +62,7 @@ echo "OK"
 # Extract the URL for our release
 echo -n "Finding download URL for ${RELEASE}..."
 
-DOWNLOAD=$(wget --load-cookies /tmp/kaka --save-cookies /tmp/kaka --keep-session-cookies "${URL_DOWNLOAD}" -O - 2>/dev/null | grep "${PKGEXT}" | grep -m 1 "${RELEASE}" | sed "s/.*href=\"\([^\"]*\\${PKGEXT}\)\"[^>]*>${RELEASE}.*/\1/" )
+DOWNLOAD=$(wget --load-cookies /tmp/kaka --save-cookies /tmp/kaka --keep-session-cookies "${URL_DOWNLOAD}" -O - 2>/dev/null | grep "${PKGEXT}" | grep -m 1 "${RELEASE}" | sed "s/.*href=\"\([^\"]*\\${PKGEXT}\)\"[^>]*>${RELEASE_TITLE}.*/\1/" )
 echo -e "OK"
 
 if [ "${DOWNLOAD}" == "" ]; then
