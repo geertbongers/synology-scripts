@@ -4,7 +4,9 @@
 #
 logger "Synology Scripts - Updating synology scripts from github"
 logger "Synology Scripts - Go to upper directory and download latest master"
-cd .. && wget https://github.com/geertbongers/synology-scripts/archive/master.zip
+cd ..
+rm ./master.zip
+wget https://github.com/geertbongers/synology-scripts/archive/master.zip
 if [ ls ./master.zip > /dev/null ]; then
     logger "Synology Scripts - Unzipping master zip"
     rm -Rf ./synology-scripts-master
