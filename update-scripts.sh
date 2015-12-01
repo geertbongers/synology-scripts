@@ -7,15 +7,21 @@
 logger "Synology Scripts - Updating synology scripts from github"
 logger "Synology Scripts - Go to upper directory and download latest master"
 cd /volume1/applications
-rm ./master.zip
+if [ -f "./master.zip" ]; then
+    rm ./master.zip
+fi
 wget https://github.com/geertbongers/synology-scripts/archive/master.zip
 if [ -f "./master.zip" ]; then
     logger "Synology Scripts - Unzipping master zip"
-    rm -Rf ./synology-scripts-master
+    if [ -d "./synology-scripts-master" ]; then
+        rm -Rf ./synology-scripts-master
+    fi
     unzip ./master.zip
     if [ -d "./synology-scripts-master" ]; then
         logger "Synology Scripts - Downloading master zip"
-        rm -Rf ./synology-scripts
+        if [ -d "./synology-scripts" ]; then
+            rm -Rf ./synology-scripts
+        fi
         mv ./synology-scripts-master ./synology-scripts
         chmod +x ./*/*.sh
         chmod +x ./*/*/*.sh
