@@ -79,7 +79,7 @@ if [ $? -ne 0 ]; then
 	echo "Failed to parse HTML, download cancelled."
 	exit 3
 fi
-VERSION=$(echo "${FILENAME}" | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+VERSION=$(echo "${FILENAME}" | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,6}-[a-z0-9]{1,9}')
 
 if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	echo "File already exists, won't download."
@@ -112,5 +112,5 @@ fi
 
 # cd /volume1/web/sspks/packages
 # extract version from PlexMediaServer-0.9.14.4.1556-a10e3c2-x86.spk
-# echo 'PlexMediaServer-0.9.14.4.1556-a10e3c2-x86.spk' | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
+# echo 'PlexMediaServer-0.9.14.4.1556-a10e3c2-x86.spk' | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,6}-[a-z0-9]{1,9}'
 # rename to plex_bromolow_9.14-4.spk
