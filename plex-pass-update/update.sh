@@ -1,10 +1,11 @@
 RELEASE="x86"
 RELEASE_TITLE="Intel"
-PKGEXT='.spk'
+PKGEXT=".spk"
 URL_LOGIN=https://plex.tv/users/sign_in
 URL_DOWNLOAD=https://plex.tv/downloads?channel=plexpass
 DOWNLOADDIR=/volume1/applications/synology-scripts/plex-pass-update/releases
 mkdir -p /volume1/applications/synology-scripts/plex-pass-update/releases
+SKIP_DOWNLOAD="no"
 
 # Useful functions
 rawurlencode() {
@@ -81,9 +82,6 @@ fi
 
 if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	echo "File already exists, won't download."
-	if [ "${AUTOINSTALL}" != "yes" ]; then
-		exit 2
-	fi
 	SKIP_DOWNLOAD="yes"
 fi
 
@@ -102,5 +100,4 @@ if [ "${SKIP_DOWNLOAD}" == "no" ]; then
 	echo "OK"
 fi
 
-cd /volume1/web/sspks/packages
-wget https://plex.tv/downloads?channel=plexpass
+#cd /volume1/web/sspks/packages
