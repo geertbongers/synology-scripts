@@ -17,7 +17,7 @@ if [ -f "./master.zip" ]; then
         logger "Synology Scripts - Downloading master zip"
         rm -Rf ./synology-scripts
         mv ./synology-scripts-master ./synology-scripts
-        mkdir ./update-synology-scripts
+        mkdir -p ./update-synology-scripts
     else
         logger -p local0.err "Synology Scripts - Unzipping failed download master.zip"
     fi
