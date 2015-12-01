@@ -7,7 +7,7 @@ logger "Synology Scripts - Go to upper directory and download latest master"
 cd ..
 rm ./master.zip
 wget https://github.com/geertbongers/synology-scripts/archive/master.zip
-if [ ls ./master.zip > /dev/null ]; then
+if [ -f "./master.zip" ]; then
     logger "Synology Scripts - Unzipping master zip"
     rm -Rf ./synology-scripts-master
     unzip ./master.zip
