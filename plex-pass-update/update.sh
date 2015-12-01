@@ -79,11 +79,11 @@ if [ $? -ne 0 ]; then
 	echo "Failed to parse HTML, download cancelled."
 	exit 3
 fi
+VERSION=$(echo "${FILENAME}" | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 
 if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	echo "File already exists, won't download."
-	VERSION=$(echo "${FILENAME}" | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
-	cp "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspk/packages/plex_bromolow_${VERSION}.spk"
+	cp "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspks/packages/plex_bromolow_${VERSION}.spk"
 	echo "OK"
 	SKIP_DOWNLOAD="yes"
 fi
@@ -100,7 +100,6 @@ if [ "${SKIP_DOWNLOAD}" == "no" ]; then
 		echo -e "\n  !! Download failed with code ${CODE}, \"${ERROR}\""
 		exit ${CODE}
 	fi
-	cp "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspk/packages/plex_bromolow_${VERSION}.spk"
 	echo "OK"
 fi
 
