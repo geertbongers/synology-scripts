@@ -87,7 +87,8 @@ if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.nfo /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	echo "version=\"${VERSION}\"" >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	mv /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo /volume1/web/sspks/packages/plex_bromolow_${VERSION}.nfo
-	cp /volume1/applications/synology-scripts/plex-pass-update/plex.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}.png
+	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_72.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}_thumb_72.png
+	#cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_120.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}_thumb_120.png
 	echo "OK"
 	SKIP_DOWNLOAD="yes"
 fi
