@@ -85,7 +85,7 @@ if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	echo "File already exists, won't download."
 	cp "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspks/packages/plex_bromolow_${VERSION}.spk"
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.nfo /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
-	echo 'version="${VERSION}"' >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
+	echo "version=\"${VERSION}\"" >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	mv /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo /volume1/web/sspks/packages/plex_bromolow_${VERSION}.nfo
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}.png
 	echo "OK"
