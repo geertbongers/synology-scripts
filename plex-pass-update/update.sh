@@ -82,6 +82,9 @@ fi
 
 if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	echo "File already exists, won't download."
+	VERSION=$(echo "${FILENAME}" | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+	cp "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspk/packages/plex_bromolow_${VERSION}.spk"
+	echo "OK"
 	SKIP_DOWNLOAD="yes"
 fi
 
@@ -97,7 +100,11 @@ if [ "${SKIP_DOWNLOAD}" == "no" ]; then
 		echo -e "\n  !! Download failed with code ${CODE}, \"${ERROR}\""
 		exit ${CODE}
 	fi
+	cp "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspk/packages/plex_bromolow_${VERSION}.spk"
 	echo "OK"
 fi
 
-#cd /volume1/web/sspks/packages
+# cd /volume1/web/sspks/packages
+# extract version from PlexMediaServer-0.9.14.4.1556-a10e3c2-x86.spk
+# echo 'PlexMediaServer-0.9.14.4.1556-a10e3c2-x86.spk' | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
+# rename to plex_bromolow_9.14-4.spk
