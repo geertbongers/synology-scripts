@@ -16,12 +16,12 @@ keypair() {
 }
 
 # Setup an exit handler so we cleanup
-function cleanup {
-	rm /tmp/kaka 2>/dev/null >/dev/null
-	rm /tmp/postdata 2>/dev/null >/dev/null
-	rm /tmp/raw 2>/dev/null >/dev/null
-}
-trap cleanup EXIT
+#function cleanup {
+#	rm /tmp/kaka 2>/dev/null >/dev/null
+#	rm /tmp/postdata 2>/dev/null >/dev/null
+#	rm /tmp/raw 2>/dev/null >/dev/null
+#}
+#trap cleanup EXIT
 
 echo -n "Authenticating..."
 # Clean old session
