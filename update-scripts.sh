@@ -11,7 +11,7 @@ if [ -f "./master.zip" ]; then
     logger "Synology Scripts - Unzipping master zip"
     rm -Rf ./synology-scripts-master
     unzip ./master.zip
-    if [ ls ./synology-scripts-master > /dev/null ]; then
+    if [ -d "./synology-scripts-master" ]; then
         logger "Synology Scripts - Downloading master zip"
         mv ./synology-scripts-master ./synology-scripts
     else
