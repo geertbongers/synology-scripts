@@ -66,6 +66,7 @@ echo -n "Finding download URL for ${RELEASE}..."
 
 DOWNLOAD=$(wget --load-cookies /tmp/kaka --save-cookies /tmp/kaka --keep-session-cookies "${URL_DOWNLOAD}" -O - 2>/dev/null | grep "${PKGEXT}" | grep -m 1 "${RELEASE}" | sed "s/.*href=\"\([^\"]*\\${PKGEXT}\)\"[^>]*>${RELEASE_TITLE}.*/\1/" )
 echo -e "OK"
+echo "${DOWNLOAD}"
 
 if [ "${DOWNLOAD}" == "" ]; then
 	echo "Sorry, page layout must have changed, I'm unable to retrieve the URL needed for download"
