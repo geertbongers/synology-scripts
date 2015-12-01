@@ -3,6 +3,8 @@ RELEASE_TITLE="Intel"
 PKGEXT='.spk'
 URL_LOGIN=https://plex.tv/users/sign_in
 URL_DOWNLOAD=https://plex.tv/downloads?channel=plexpass
+DOWNLOADDIR=/volume1/applications/synology-scripts/plex-pass-update/releases
+mkdir -p /volume1/applications/synology-scripts/plex-pass-update/releases
 
 # Useful functions
 rawurlencode() {
