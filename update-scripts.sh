@@ -8,14 +8,14 @@ cd .. && wget https://github.com/geertbongers/synology-scripts/archive/master.zi
 if [ ls ./master.zip > /dev/null ]; then
     logger "Synology Scripts - Unzipping master zip"
     rm -Rf ./synology-scripts-master
-    unzip master.zip
+    unzip ./master.zip
     if [ ls ./synology-scripts-master > /dev/null ]; then
         logger "Synology Scripts - Downloading master zip"
         mv ./synology-scripts-master ./synology-scripts
     else
         logger -p local0.err "Synology Scripts - Unzipping failed download master.zip"
     fi
-    rm master.zip
+    rm ./master.zip
 else
     logger -p local0.err "Synology Scripts - Failed download master.zip"
 fi
