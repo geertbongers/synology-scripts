@@ -88,12 +88,12 @@ if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
     if [ -d ./plex-temp ]; then
         rm -Rf ./plex-temp
     fi
-	mkdir plex-temp
+	//mkdir plex-temp
 	# tar -xvf "${DOWNLOADDIR}/${FILENAME}" -C ./plex-temp
 	# echo "silent_upgrade=true" >> ./plex-temp/INFO
 	# tar -cvf "${FILENAME}" -C ./plex-temp .
 	# rm -Rf ./plex-temp
-	mv "${FILENAME}" "/volume1/web/sspks/packages/PlexMediaServer_bromolow_${VERSION}.spk"
+	mv "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspks/packages/PlexMediaServer_bromolow_${VERSION}.spk"
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.nfo /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	echo "version=\"${VERSION}\"" >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	mv /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo /volume1/web/sspks/packages/PlexMediaServer_bromolow_${VERSION}.nfo
