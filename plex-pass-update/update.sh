@@ -88,7 +88,7 @@ if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
     if [ -d ./plex-temp ]; then
         rm -Rf ./plex-temp
     fi
-	//mkdir plex-temp
+	# mkdir plex-temp
 	# tar -xvf "${DOWNLOADDIR}/${FILENAME}" -C ./plex-temp
 	# echo "silent_upgrade=true" >> ./plex-temp/INFO
 	# tar -cvf "${FILENAME}" -C ./plex-temp .
