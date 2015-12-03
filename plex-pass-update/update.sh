@@ -88,17 +88,17 @@ if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
     if [ -d ./plex-temp ]; then
         rm -Rf ./plex-temp
     fi
-	# mkdir plex-temp
-	# tar -xvf "${DOWNLOADDIR}/${FILENAME}" -C ./plex-temp
-	# echo "silent_upgrade=true" >> ./plex-temp/INFO
-	# tar -cvf "${FILENAME}" -C ./plex-temp .
-	# rm -Rf ./plex-temp
-	mv "${DOWNLOADDIR}/${FILENAME}" "/volume1/web/sspks/packages/plex_bromolow_${VERSION}.spk"
+	mkdir plex-temp
+	tar -xvf "${DOWNLOADDIR}/${FILENAME}" -C ./plex-temp
+	echo "silent_upgrade=true" >> ./plex-temp/INFO
+	tar -cvf "${FILENAME}" -C ./plex-temp .
+	rm -Rf ./plex-temp
+	mv "${FILENAME}" "/volume1/web/sspks/packages/PlexMediaServer_bromolow_${VERSION}.spk"
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.nfo /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	echo "version=\"${VERSION}\"" >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
-	mv /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo /volume1/web/sspks/packages/plex_bromolow_${VERSION}.nfo
-	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_72.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}_thumb_72.png
-	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_120.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}_thumb_120.png
+	mv /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo /volume1/web/sspks/packages/PlexMediaServer_bromolow_${VERSION}.nfo
+	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_72.png /volume1/web/sspks/packages/PlexMediaServer_bromolow_${VERSION}_thumb_72.png
+	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_120.png /volume1/web/sspks/packages/PlexMediaServer_bromolow_${VERSION}_thumb_120.png
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_72.png /volume1/web/sspks/packages/default_package_icon_72.png
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_120.png /volume1/web/sspks/packages/default_package_icon_120.png
 	echo "OK"
