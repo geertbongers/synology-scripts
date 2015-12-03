@@ -84,6 +84,7 @@ VERSION=$(echo "${FILENAME}" | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-
 if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	echo "File already exists, won't download."
 	rm /volume1/web/sspks/packages/plex*
+	rm /volume1/web/sspks/packages/Plex*
     if [ -d ./plex-temp ]; then
         rm -Rf ./plex-temp
     fi
@@ -95,9 +96,9 @@ if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	mv "${FILENAME}" "/volume1/web/sspks/packages/plex_bromolow_${VERSION}.spk"
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.nfo /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	echo "version=\"${VERSION}\"" >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
-	mv /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo /volume1/web/sspks/packages/plex_bromolow_${VERSION}.nfo
-	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_72.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}_thumb_72.png
-	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_120.png /volume1/web/sspks/packages/plex_bromolow_${VERSION}_thumb_120.png
+	mv /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo /volume1/web/sspks/packages/Plex\ Media\ Server_bromolow_${VERSION}.nfo
+	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_72.png /volume1/web/sspks/packages/Plex\ Media\ Server_bromolow_${VERSION}_thumb_72.png
+	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_120.png /volume1/web/sspks/packages/Plex\ Media\ Server_bromolow_${VERSION}_thumb_120.png
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_72.png /volume1/web/sspks/packages/default_package_icon_72.png
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex_thumb_120.png /volume1/web/sspks/packages/default_package_icon_120.png
 	echo "OK"
