@@ -84,9 +84,10 @@ VERSION=$(echo "${FILENAME}" | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-
 if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	echo "File already exists, won't download."
 	rm /volume1/web/sspks/packages/plex*
-	tar -xvf "${DOWNLOADDIR}/${FILENAME}" -C temp
+	mkdir temp
+	tar -xvf "${DOWNLOADDIR}/${FILENAME}" -C ./temp
 	echo "\nsilent_upgrade=true" >> plex/INFO
-	tar -cjf "${FILENAME}" /temp
+	tar -cjf "${FILENAME}" ./temp
 	mv "${FILENAME}" "/volume1/web/sspks/packages/plex_bromolow_${VERSION}.spk"
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.nfo /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	echo "version=\"${VERSION}\"" >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
