@@ -1,4 +1,5 @@
 package="Plex Media Server"
+displayname="Plex Media Server"
 description="Plex organizes all of your personal media so you can easily access and enjoy it."
 maintainer="Plex Inc"
 firmware="3.0-1593"
