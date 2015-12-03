@@ -90,7 +90,7 @@ if [ -f "${DOWNLOADDIR}/${FILENAME}" -a "${FORCE}" != "yes" ]; then
 	mkdir plex-temp
 	tar -xvf "${DOWNLOADDIR}/${FILENAME}" -C ./plex-temp
 	echo "silent_upgrade=true" >> ./plex-temp/INFO
-	cd ./plex-temp && tar -cjf "${FILENAME}" ./ && cd ..
+	tar -cvf "${FILENAME}" -C ./plex-temp .
 	mv "${FILENAME}" "/volume1/web/sspks/packages/plex_bromolow_${VERSION}.spk"
 	cp /volume1/applications/synology-scripts/plex-pass-update/plex.nfo /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
 	echo "version=\"${VERSION}\"" >> /volume1/applications/synology-scripts/plex-pass-update/plex-new.nfo
